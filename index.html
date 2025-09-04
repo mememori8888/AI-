@@ -763,256 +763,6 @@ const questions = [
       ]
     },
     {
-      "question": "学習率（Learning Rate）を調整するための一般的な手法はどれですか？",
-      "hint": "これは、トレーニング中に学習率を動的に変更するものです。",
-      "options": [
-        { "text": "手動で調整する", "isCorrect": true, "rationale": "学習率を手動で調整することは、一般的な手法の一つです。" },
-        { "text": "学習率スケジューラ（Learning Rate Scheduler）", "isCorrect": true, "rationale": "学習率スケジューラは、トレーニングの進行に応じて学習率を段階的に減少させることで、モデルが最適解に収束するのを助けます。" },
-        { "text": "ランダムサーチ（Random Search）", "isCorrect": false, "rationale": "ランダムサーチは、ハイパーパラメータチューニングの手法です。" },
-        { "text": "バッチ正規化（Batch Normalization）", "isCorrect": false, "rationale": "バッチ正規化は、学習を安定させるための手法です。" }
-      ]
-    },
-    {
-      "question": "モデルのトレーニング中に、損失が徐々に減少するが、検証損失が上昇し始める場合、これは何を示していますか？",
-      "hint": "これは、モデルが新しいデータでうまく機能しなくなる兆候です。",
-      "options": [
-        { "text": "過学習（Overfitting）", "isCorrect": true, "rationale": "トレーニング損失が減少し続け、検証損失が上昇し始める場合、モデルがトレーニングデータに過学習していることを示しています。" },
-        { "text": "過小学習（Underfitting）", "isCorrect": false, "rationale": "過小学習は、モデルがトレーニングデータでもうまく機能しないことです。" },
-        { "text": "適切な学習率", "isCorrect": false, "rationale": "適切な学習率を使用した場合、損失は減少します。" },
-        { "text": "早期停止", "isCorrect": false, "rationale": "早期停止は、過学習を防ぐための手法です。" }
-      ]
-    },
-    {
-      "question": "モデルのトレーニング中に、損失が非常にゆっくりと減少する場合、これは何を示していますか？",
-      "hint": "これは、モデルの『歩幅』が小さすぎることに関係します。",
-      "options": [
-        { "text": "過学習（Overfitting）", "isCorrect": false, "rationale": "過学習は、損失が急速に減少する場合に発生します。" },
-        { "text": "過小学習（Underfitting）", "isCorrect": false, "rationale": "過小学習は、損失が減少しない場合に発生します。" },
-        { "text": "学習率が小さすぎる", "isCorrect": true, "rationale": "学習率が小さすぎると、モデルのパラメータ更新が非常に小さくなり、モデルの収束が遅くなります。" },
-        { "text": "学習率が大きすぎる", "isCorrect": false, "rationale": "学習率が大きすぎると、損失が振動するまたは発散する可能性があります。" }
-      ]
-    },
-    {
-      "question": "モデルのトレーニング中に、損失が振動するまたは発散する場合、これは何を示していますか？",
-      "hint": "これは、モデルの『歩幅』が大きすぎることに関係します。",
-      "options": [
-        { "text": "過学習（Overfitting）", "isCorrect": false, "rationale": "過学習は、損失が急速に減少する場合に発生します。" },
-        { "text": "過小学習（Underfitting）", "isCorrect": false, "rationale": "過小学習は、損失が減少しない場合に発生します。" },
-        { "text": "学習率が小さすぎる", "isCorrect": false, "rationale": "学習率が小さすぎると、損失が非常にゆっくりと減少します。" },
-        { "text": "学習率が大きすぎる", "isCorrect": true, "rationale": "学習率が大きすぎる場合、モデルが最適解を『飛び越えて』しまい、損失が収束せずに発散したり、不安定になったりする可能性があります。" }
-      ]
-    },
-    {
-      "question": "モデルのトレーニング中に、損失がほとんど減少しない場合、これは何を示していますか？",
-      "hint": "これは、モデルがタスクを学習できていない状態です。",
-      "options": [
-        { "text": "過学習（Overfitting）", "isCorrect": false, "rationale": "過学習は、損失が急速に減少する場合に発生します。" },
-        { "text": "過小学習（Underfitting）", "isCorrect": true, "rationale": "過小学習は、モデルがトレーニングデータでもうまく機能しないことです。" },
-        { "text": "適切な学習率", "isCorrect": false, "rationale": "適切な学習率を使用した場合、損失は減少します。" },
-        { "text": "早期停止", "isCorrect": false, "rationale": "早期停止は、過学習を防ぐための手法です。" }
-      ]
-    },
-    {
-      "question": "モデルのトレーニング中に、トレーニング損失が0.1、検証損失が0.5の場合、これは何を示していますか？",
-      "hint": "これは、モデルがトレーニングデータに特化しすぎている状態です。",
-      "options": [
-        { "text": "過学習（Overfitting）", "isCorrect": true, "rationale": "トレーニング損失が非常に低く、検証損失が高い場合、モデルがトレーニングデータに過学習していることを示しています。" },
-        { "text": "過小学習（Underfitting）", "isCorrect": false, "rationale": "過小学習は、トレーニング損失も検証損失も高い場合に発生します。" },
-        { "text": "適切なモデル", "isCorrect": false, "rationale": "適切なモデルは、トレーニング損失と検証損失がともに低いか、互いに近い値になります。" },
-        { "text": "早期停止", "isCorrect": false, "rationale": "早期停止は、過学習を防ぐための手法です。" }
-      ]
-    },
-    {
-      "question": "モデルのトレーニング中に、トレーニング損失が0.5、検証損失が0.6の場合、これは何を示していますか？",
-      "hint": "これは、モデルがトレーニングデータに特化しすぎている状態です。",
-      "options": [
-        { "text": "過学習（Overfitting）", "isCorrect": true, "rationale": "トレーニング損失と検証損失が近い値で、どちらも比較的高い場合、モデルが過学習していることを示しています。" },
-        { "text": "過小学習（Underfitting）", "isCorrect": false, "rationale": "過小学習は、トレーニング損失も検証損失も高い場合に発生します。" },
-        { "text": "適切なモデル", "isCorrect": false, "rationale": "適切なモデルは、トレーニング損失と検証損失がともに低いか、互いに近い値になります。" },
-        { "text": "早期停止", "isCorrect": false, "rationale": "早期停止は、過学習を防ぐための手法です。" }
-      ]
-    },
-    {
-      "question": "モデルのトレーニング中に、トレーニング損失が0.5、検証損失が0.5の場合、これは何を示していますか？",
-      "hint": "これは、モデルがトレーニングデータと検証データの両方で同様に機能している状態です。",
-      "options": [
-        { "text": "過学習（Overfitting）", "isCorrect": false, "rationale": "過学習は、トレーニング損失と検証損失の間に大きな差がある場合に発生します。" },
-        { "text": "過小学習（Underfitting）", "isCorrect": true, "rationale": "トレーニング損失と検証損失がほぼ同じで、どちらも高い値の場合、モデルがタスクを十分に学習できていないことを示しています。" },
-        { "text": "適切なモデル", "isCorrect": false, "rationale": "適切なモデルは、トレーニング損失と検証損失がともに低いか、互いに近い値になります。" },
-        { "text": "早期停止", "isCorrect": false, "rationale": "早期停止は、過学習を防ぐための手法です。" }
-      ]
-    },
-    {
-      "question": "モデルのトレーニング中に、トレーニング損失が0.1、検証損失が0.1の場合、これは何を示していますか？",
-      "hint": "これは、モデルがトレーニングデータと検証データの両方で同様に機能している状態です。",
-      "options": [
-        { "text": "過学習（Overfitting）", "isCorrect": false, "rationale": "過学習は、トレーニング損失と検証損失の間に大きな差がある場合に発生します。" },
-        { "text": "過小学習（Underfitting）", "isCorrect": false, "rationale": "過小学習は、トレーニング損失と検証損失がともに高い場合に発生します。" },
-        { "text": "適切なモデル", "isCorrect": true, "rationale": "トレーニング損失と検証損失がほぼ同じで、どちらも低い値の場合、モデルが適切に学習されていることを示しています。" },
-        { "text": "早期停止", "isCorrect": false, "rationale": "早期停止は、過学習を防ぐための手法です。" }
-      ]
-    },
-    {
-      "question": "モデルのトレーニング中に、学習率を徐々に減少させる手法は何と呼ばれますか？",
-      "hint": "これは、学習率スケジューラの一種です。",
-      "options": [
-        { "text": "早期停止（Early Stopping）", "isCorrect": false, "rationale": "早期停止は、トレーニングを停止するための手法です。" },
-        { "text": "学習率減衰（Learning Rate Decay）", "isCorrect": true, "rationale": "学習率減衰は、トレーニングの進行に応じて学習率を段階的に減少させる手法です。" },
-        { "text": "勾配クリッピング（Gradient Clipping）", "isCorrect": false, "rationale": "勾配クリッピングは、勾配の爆発を防ぐための手法です。" },
-        { "text": "バッチ正規化（Batch Normalization）", "isCorrect": false, "rationale": "バッチ正規化は、学習を安定させるための手法です。" }
-      ]
-    },
-    {
-      "question": "モデルのトレーニング中に、学習率を段階的に減少させる手法は何と呼ばれますか？",
-      "hint": "これは、学習率スケジューラの一種です。",
-      "options": [
-        { "text": "ステップ減衰（Step Decay）", "isCorrect": true, "rationale": "ステップ減衰は、一定のエポック数ごとに学習率を特定の割合で減少させる手法です。" },
-        { "text": "指数減衰（Exponential Decay）", "isCorrect": false, "rationale": "指数減衰は、学習率を指数関数的に減少させる手法です。" },
-        { "text": "コサイン減衰（Cosine Decay）", "isCorrect": false, "rationale": "コサイン減衰は、学習率をコサイン曲線に従って減少させる手法です。" },
-        { "text": "早期停止（Early Stopping）", "isCorrect": false, "rationale": "早期停止は、トレーニングを停止するための手法です。" }
-      ]
-    },
-    {
-      "question": "モデルのトレーニング中に、学習率を指数関数的に減少させる手法は何と呼ばれますか？",
-      "hint": "これは、学習率スケジューラの一種です。",
-      "options": [
-        { "text": "ステップ減衰（Step Decay）", "isCorrect": false, "rationale": "ステップ減衰は、一定のエポック数ごとに学習率を特定の割合で減少させる手法です。" },
-        { "text": "指数減衰（Exponential Decay）", "isCorrect": true, "rationale": "指数減衰は、学習率を指数関数的に減少させる手法です。" },
-        { "text": "コサイン減衰（Cosine Decay）", "isCorrect": false, "rationale": "コサイン減衰は、学習率をコサイン曲線に従って減少させる手法です。" },
-        { "text": "早期停止（Early Stopping）", "isCorrect": false, "rationale": "早期停止は、トレーニングを停止するための手法です。" }
-      ]
-    },
-    {
-      "question": "モデルのトレーニング中に、学習率をコサイン曲線に従って減少させる手法は何と呼ばれますか？",
-      "hint": "これは、学習率スケジューラの一種です。",
-      "options": [
-        { "text": "ステップ減衰（Step Decay）", "isCorrect": false, "rationale": "ステップ減衰は、一定のエポック数ごとに学習率を特定の割合で減少させる手法です。" },
-        { "text": "指数減衰（Exponential Decay）", "isCorrect": false, "rationale": "指数減衰は、学習率を指数関数的に減少させる手法です。" },
-        { "text": "コサイン減衰（Cosine Decay）", "isCorrect": true, "rationale": "コサイン減衰は、学習率をコサイン曲線に従って減少させる手法です。" },
-        { "text": "早期停止（Early Stopping）", "isCorrect": false, "rationale": "早期停止は、トレーニングを停止するための手法です。" }
-      ]
-    },
-    {
-      "question": "モデルのトレーニング中に、勾配が非常に小さくなり、学習がほとんど進まなくなる現象は何と呼ばれますか？",
-      "hint": "これは、深いニューラルネットワークで特に顕著です。",
-      "options": [
-        { "text": "勾配爆発（Exploding Gradient）", "isCorrect": false, "rationale": "勾配爆発は、勾配が非常に大きくなる現象です。" },
-        { "text": "勾配消失（Vanishing Gradient）", "isCorrect": true, "rationale": "勾配消失は、ネットワークが深くなるにつれて勾配が非常に小さくなり、最初の層の学習がほとんど進まなくなる現象です。" },
-        { "text": "過学習（Overfitting）", "isCorrect": false, "rationale": "過学習は、モデルがトレーニングデータに特化しすぎている状態です。" },
-        { "text": "過小学習（Underfitting）", "isCorrect": false, "rationale": "過小学習は、モデルがタスクを学習できていない状態です。" }
-      ]
-    },
-    {
-      "question": "モデルのトレーニング中に、勾配が非常に大きくなり、損失が発散する現象は何と呼ばれますか？",
-      "hint": "これは、勾配クリッピングで解決できます。",
-      "options": [
-        { "text": "勾配爆発（Exploding Gradient）", "isCorrect": true, "rationale": "勾配爆発は、勾配が非常に大きくなり、損失が発散する現象です。" },
-        { "text": "勾配消失（Vanishing Gradient）", "isCorrect": false, "rationale": "勾配消失は、勾配が非常に小さくなる現象です。" },
-        { "text": "過学習（Overfitting）", "isCorrect": false, "rationale": "過学習は、モデルがトレーニングデータに特化しすぎている状態です。" },
-        { "text": "過小学習（Underfitting）", "isCorrect": false, "rationale": "過小学習は、モデルがタスクを学習できていない状態です。" }
-      ]
-    },
-    {
-      "question": "モデルのファインチューニングのプロセスで、学習率を非常に低く設定する理由は何ですか？",
-      "hint": "これは、事前学習済みモデルの知識を維持するためです。",
-      "options": [
-        { "text": "モデルの過学習を防ぐため", "isCorrect": true, "rationale": "学習率を低く設定することで、モデルのパラメータが大幅に変化するのを防ぎ、事前学習済みモデルの知識を維持し、過学習を防ぎます。" },
-        { "text": "モデルのトレーニング時間を短縮するため", "isCorrect": false, "rationale": "学習率が低いと、トレーニング時間が長くなります。" },
-        { "text": "モデルの重みをゼロに初期化するため", "isCorrect": false, "rationale": "これは初期化の役割です。" },
-        { "text": "モデルの汎化能力を向上させるため", "isCorrect": false, "rationale": "学習率を低く設定することは、モデルの汎化能力を向上させるための手法です。" }
-      ]
-    },
-    {
-      "question": "モデルのハイパーパラメータチューニングのプロセスで、グリッドサーチとランダムサーチのどちらがより効率的ですか？",
-      "hint": "これは、探索空間が広い場合に特に顕著です。",
-      "options": [
-        { "text": "グリッドサーチ", "isCorrect": false, "rationale": "グリッドサーチは、すべてのパラメータの組み合わせを試すため、探索空間が広いと非効率です。" },
-        { "text": "ランダムサーチ", "isCorrect": true, "rationale": "ランダムサーチは、パラメータの指定された範囲からランダムに値を選び、試すため、グリッドサーチよりも効率的に最適な組み合わせを見つけることができます。" },
-        { "text": "どちらも同様に効率的です", "isCorrect": false, "rationale": "ランダムサーチは、グリッドサーチよりも効率的です。" },
-        { "text": "どちらも非効率的です", "isCorrect": false, "rationale": "どちらも効率的なハイパーパラメータチューニングの手法です。" }
-      ]
-    },
-    {
-      "question": "モデルの性能を評価する際、適合率（Precision）と再現率（Recall）のどちらがより重要ですか？",
-      "hint": "これは、タスクの性質によります。",
-      "options": [
-        { "text": "適合率（Precision）", "isCorrect": false, "rationale": "どちらがより重要かは、タスクの性質によります。" },
-        { "text": "再現率（Recall）", "isCorrect": false, "rationale": "どちらがより重要かは、タスクの性質によります。" },
-        { "text": "どちらも同様に重要です", "isCorrect": true, "rationale": "適合率と再現率は、タスクの性質に応じて、どちらがより重要かが異なります。たとえば、スパムメールの検出では、誤って正当なメールをスパムとして分類しないように、適合率がより重要です。一方、病気の診断では、病気の患者を見逃さないように、再現率がより重要です。" },
-        { "text": "どちらも重要ではありません", "isCorrect": false, "rationale": "どちらも重要なメトリックです。" }
-      ]
-    },
-    {
-      "question": "モデルのアンサンブル（Ensemble）の手法で、異なるアルゴリズムを使用するものはどれですか？",
-      "hint": "これは、スタッキング（Stacking）です。",
-      "options": [
-        { "text": "バギング（Bagging）", "isCorrect": false, "rationale": "バギングは、同じアルゴリズムを使用します。" },
-        { "text": "ブースティング（Boosting）", "isCorrect": false, "rationale": "ブースティングは、同じアルゴリズムを使用します。" },
-        { "text": "スタッキング（Stacking）", "isCorrect": true, "rationale": "スタッキングは、複数の基本モデルの予測を、メタモデルと呼ばれる別のモデルの入力として使用し、最終的な予測を行います。" },
-        { "text": "ドロップアウト（Dropout）", "isCorrect": false, "rationale": "ドロップアウトは、アンサンブルの手法ではありません。" }
-      ]
-    },
-    {
-      "question": "モデルのアンサンブル（Ensemble）の手法で、同じアルゴリズムを使用するものはどれですか？",
-      "hint": "これは、バギング（Bagging）とブースティング（Boosting）です。",
-      "options": [
-        { "text": "バギング（Bagging）", "isCorrect": true, "rationale": "バギングは、同じアルゴリズムを使用します。" },
-        { "text": "ブースティング（Boosting）", "isCorrect": true, "rationale": "ブースティングは、同じアルゴリズムを使用します。" },
-        { "text": "スタッキング（Stacking）", "isCorrect": false, "rationale": "スタッキングは、異なるアルゴリズムを使用します。" },
-        { "text": "ドロップアウト（Dropout）", "isCorrect": false, "rationale": "ドロップアウトは、アンサンブルの手法ではありません。" }
-      ]
-    },
-    {
-      "question": "モデルのアンサンブル（Ensemble）の手法で、モデルの予測を組み合わせるものはどれですか？",
-      "hint": "これは、バギング（Bagging）、ブースティング（Boosting）、スタッキング（Stacking）です。",
-      "options": [
-        { "text": "バギング（Bagging）", "isCorrect": true, "rationale": "バギングは、モデルの予測を平均化または投票で決定します。" },
-        { "text": "ブースティング（Boosting）", "isCorrect": true, "rationale": "ブースティングは、モデルの予測を組み合わせます。" },
-        { "text": "スタッキング（Stacking）", "isCorrect": true, "rationale": "スタッキングは、モデルの予測を別のモデルで組み合わせます。" },
-        { "text": "ドロップアウト（Dropout）", "isCorrect": false, "rationale": "ドロップアウトは、アンサンブルの手法ではありません。" }
-      ]
-    },
-    {
-      "question": "モデルのアンサンブル（Ensemble）の主な目的は何ですか？",
-      "hint": "これは、複数のモデルの予測を組み合わせることで、より良い結果を得るものです。",
-      "options": [
-        { "text": "モデルのサイズを減らすこと", "isCorrect": false, "rationale": "モデルのアンサンブルは、モデルのサイズを減らすものではありません。" },
-        { "text": "モデルの予測を組み合わせて、よりロバストで正確な予測を得ること", "isCorrect": true, "rationale": "モデルのアンサンブルは、複数のモデルの予測を組み合わせることで、個々のモデルの予測よりも優れた結果を達成します。" },
-        { "text": "モデルのトレーニング時間を短縮すること", "isCorrect": false, "rationale": "モデルのアンサンブルは、トレーニング時間を延長します。" },
-        { "text": "モデルの重みをゼロに初期化すること", "isCorrect": false, "rationale": "これは初期化の役割です。" }
-      ]
-    },
-    {
-      "question": "モデルのバギング（Bagging）の主な利点は何ですか？",
-      "hint": "これは、過学習を減らすのに役立ちます。",
-      "options": [
-        { "text": "モデルの過学習を減らし、汎化能力を向上させること", "isCorrect": true, "rationale": "バギングは、元のデータセットからランダムにサンプリングされたサブセットで複数のモデルを独立してトレーニングすることで、過学習を減らし、性能を向上させます。" },
-        { "text": "モデルのトレーニング時間を短縮すること", "isCorrect": false, "rationale": "バギングは、トレーニング時間を延長します。" },
-        { "text": "モデルのサイズを減らすこと", "isCorrect": false, "rationale": "バギングは、モデルのサイズを減らすものではありません。" },
-        { "text": "モデルの重みをゼロに初期化すること", "isCorrect": false, "rationale": "これは初期化の役割です。" }
-      ]
-    },
-    {
-      "question": "モデルのブースティング（Boosting）の主な利点は何ですか？",
-      "hint": "これは、弱い学習器を組み合わせて、強力な学習器を構築するものです。",
-      "options": [
-        { "text": "弱い学習器を順番にトレーニングし、前のモデルの誤りを修正することで、高い精度を達成すること", "isCorrect": true, "rationale": "ブースティングは、弱い学習器を順番に構築し、各モデルが前のモデルの誤りを修正するように学習することで、高い精度を達成します。" },
-        { "text": "モデルの過学習を減らすこと", "isCorrect": false, "rationale": "ブースティングは、過学習する可能性があります。" },
-        { "text": "モデルのトレーニング時間を短縮すること", "isCorrect": false, "rationale": "ブースティングは、トレーニング時間を延長します。" },
-        { "text": "モデルのサイズを減らすこと", "isCorrect": false, "rationale": "ブースティングは、モデルのサイズを減らすものではありません。" }
-      ]
-    },
-    {
-      "question": "モデルのスタッキング（Stacking）の主な利点は何ですか？",
-      "hint": "これは、複数のモデルの予測を組み合わせることで、より良い結果を得るものです。",
-      "options": [
-        { "text": "モデルの予測を組み合わせて、よりロバストで正確な予測を得ること", "isCorrect": true, "rationale": "スタッキングは、複数の基本モデルの予測を、メタモデルと呼ばれる別のモデルの入力として使用し、最終的な予測を行うことで、モデルの性能を向上させます。" },
-        { "text": "モデルの過学習を減らすこと", "isCorrect": false, "rationale": "スタッキングは、過学習する可能性があります。" },
-        { "text": "モデルのトレーニング時間を短縮すること", "isCorrect": false, "rationale": "スタッキングは、トレーニング時間を延長します。" },
-        { "text": "モデルのサイズを減らすこと", "isCorrect": false, "rationale": "スタッキングは、モデルのサイズを減らすものではありません。" }
-      ]
-    },
-    {
       "question": "モデルのハイパーパラメータチューニングのプロセスで、グリッドサーチを使用する際の主な欠点は何ですか？",
       "hint": "これは、計算リソースの消費量と関係があります。",
       "options": [
@@ -1133,133 +883,153 @@ const questions = [
       ]
     },
     {
-      "question": "モデルのトレーニング中に、損失が振動するまたは発散する場合、これは何を示していますか？",
-      "hint": "これは、モデルの『歩幅』が大きすぎることに関係します。",
+      "question": "モデルの過学習を減らすための手法で、正則化とドロップアウトのどちらがより効果的ですか？",
+      "hint": "どちらも過学習を防ぐための手法ですが、アプローチが異なります。",
       "options": [
-        { "text": "過学習（Overfitting）", "isCorrect": false, "rationale": "過学習は、損失が急速に減少する場合に発生します。" },
-        { "text": "過小学習（Underfitting）", "isCorrect": false, "rationale": "過小学習は、損失が減少しない場合に発生します。" },
-        { "text": "学習率が小さすぎる", "isCorrect": false, "rationale": "学習率が小さすぎると、損失が非常にゆっくりと減少します。" },
-        { "text": "学習率が大きすぎる", "isCorrect": true, "rationale": "学習率が大きすぎる場合、モデルが最適解を『飛び越えて』しまい、損失が収束せずに発散したり、不安定になったりする可能性があります。" }
+        { "text": "正則化", "isCorrect": false, "rationale": "どちらも過学習を防ぐための手法であり、どちらがより効果的かは状況によります。" },
+        { "text": "ドロップアウト", "isCorrect": false, "rationale": "どちらも過学習を防ぐための手法であり、どちらがより効果的かは状況によります。" },
+        { "text": "どちらも同様に効果的ですが、異なるメカニズムで機能する", "isCorrect": true, "rationale": "正則化とドロップアウトはどちらも過学習を防ぐための効果的な手法ですが、異なるメカニズムで機能します。正則化は、モデルの重みを制限することで過学習を防ぎ、ドロップアウトは、ニューロン間の過度な依存関係を防ぐことで過学習を防ぎます。" },
+        { "text": "どちらも過学習を防ぐことはできません", "isCorrect": false, "rationale": "どちらも過学習を防ぐための効果的な手法です。" }
       ]
     },
     {
-      "question": "モデルのトレーニング中に、損失がほとんど減少しない場合、これは何を示していますか？",
-      "hint": "これは、モデルがタスクを学習できていない状態です。",
+      "question": "モデルの量子化（Quantization）の主な利点は何ですか？",
+      "hint": "これは、モデルを『軽量化』し、デバイス上で実行しやすくするものです。",
       "options": [
-        { "text": "過学習（Overfitting）", "isCorrect": false, "rationale": "過学習は、損失が急速に減少する場合に発生します。" },
-        { "text": "過小学習（Underfitting）", "isCorrect": true, "rationale": "過小学習は、モデルがトレーニングデータでもうまく機能しないことです。" },
-        { "text": "適切な学習率", "isCorrect": false, "rationale": "適切な学習率を使用した場合、損失は減少します。" },
-        { "text": "早期停止", "isCorrect": false, "rationale": "早期停止は、過学習を防ぐための手法です。" }
+        { "text": "モデルの精度を向上させること", "isCorrect": false, "rationale": "モデルの量子化は、精度を犠牲にしてモデルのサイズを減らします。" },
+        { "text": "モデルのサイズを減らし、推論速度を上げること", "isCorrect": true, "rationale": "モデルの量子化は、モデルの重みを浮動小数点数から整数に変換することで、モデルのサイズを減らし、推論速度を上げます。" },
+        { "text": "モデルのトレーニング時間を短縮すること", "isCorrect": false, "rationale": "モデルの量子化は、推論速度を上げるためのものです。" },
+        { "text": "モデルの汎化能力を向上させること", "isCorrect": false, "rationale": "モデルの量子化は、汎化能力に影響を与えますが、主な目的ではありません。" }
       ]
     },
     {
-      "question": "モデルのトレーニング中に、トレーニング損失が0.1、検証損失が0.5の場合、これは何を示していますか？",
+      "question": "モデルのプルーニング（Pruning）の主な利点は何ですか？",
+      "hint": "これは、モデルを『軽量化』し、デバイス上で実行しやすくするものです。",
+      "options": [
+        { "text": "モデルの精度を向上させること", "isCorrect": false, "rationale": "モデルのプルーニングは、精度を犠牲にしてモデルのサイズを減らします。" },
+        { "text": "モデルの不要な接続やニューロンを削除し、サイズと推論速度を向上させること", "isCorrect": true, "rationale": "モデルのプルーニングは、モデルのサイズを減らし、推論速度を上げるために、重要でない接続やニューロンを削除します。" },
+        { "text": "モデルのトレーニング時間を短縮すること", "isCorrect": false, "rationale": "モデルのプルーニングは、推論速度を上げるためのものです。" },
+        { "text": "モデルの汎化能力を向上させること", "isCorrect": false, "rationale": "モデルのプルーニングは、汎化能力に影響を与えますが、主な目的ではありません。" }
+      ]
+    },
+    {
+      "question": "モデルのアンサンブル（Ensemble）の主な利点は何ですか？",
+      "hint": "これは、複数のモデルの予測を組み合わせることで、より良い結果を得るものです。",
+      "options": [
+        { "text": "モデルのサイズを減らすこと", "isCorrect": false, "rationale": "モデルのアンサンブルは、モデルのサイズを減らすものではありません。" },
+        { "text": "モデルの予測を組み合わせて、よりロバストで正確な予測を得ること", "isCorrect": true, "rationale": "モデルのアンサンブルは、複数のモデルの予測を組み合わせることで、個々のモデルの予測よりも優れた結果を達成します。" },
+        { "text": "モデルのトレーニング時間を短縮すること", "isCorrect": false, "rationale": "モデルのアンサンブルは、トレーニング時間を延長します。" },
+        { "text": "モデルの重みをゼロに初期化すること", "isCorrect": false, "rationale": "これは初期化の役割です。" }
+      ]
+    },
+    {
+      "question": "モデルのバギング（Bagging）の主な利点は何ですか？",
+      "hint": "これは、過学習を減らすのに役立ちます。",
+      "options": [
+        { "text": "モデルの過学習を減らし、汎化能力を向上させること", "isCorrect": true, "rationale": "バギングは、元のデータセットからランダムにサンプリングされたサブセットで複数のモデルを独立してトレーニングすることで、過学習を減らし、性能を向上させます。" },
+        { "text": "モデルのトレーニング時間を短縮すること", "isCorrect": false, "rationale": "バギングは、トレーニング時間を延長します。" },
+        { "text": "モデルのサイズを減らすこと", "isCorrect": false, "rationale": "バギングは、モデルのサイズを減らすものではありません。" },
+        { "text": "モデルの重みをゼロに初期化すること", "isCorrect": false, "rationale": "これは初期化の役割です。" }
+      ]
+    },
+    {
+      "question": "モデルのブースティング（Boosting）の主な利点は何ですか？",
+      "hint": "これは、弱い学習器を組み合わせて、強力な学習器を構築するものです。",
+      "options": [
+        { "text": "弱い学習器を順番にトレーニングし、前のモデルの誤りを修正することで、高い精度を達成すること", "isCorrect": true, "rationale": "ブースティングは、弱い学習器を順番に構築し、各モデルが前のモデルの誤りを修正するように学習することで、高い精度を達成します。" },
+        { "text": "モデルの過学習を減らすこと", "isCorrect": false, "rationale": "ブースティングは、過学習する可能性があります。" },
+        { "text": "モデルのトレーニング時間を短縮すること", "isCorrect": false, "rationale": "ブースティングは、トレーニング時間を延長します。" },
+        { "text": "モデルのサイズを減らすこと", "isCorrect": false, "rationale": "ブースティングは、モデルのサイズを減らすものではありません。" }
+      ]
+    },
+    {
+      "question": "モデルのスタッキング（Stacking）の主な利点は何ですか？",
+      "hint": "これは、複数のモデルの予測を組み合わせることで、より良い結果を得るものです。",
+      "options": [
+        { "text": "モデルの予測を組み合わせて、よりロバストで正確な予測を得ること", "isCorrect": true, "rationale": "スタッキングは、複数の基本モデルの予測を、メタモデルと呼ばれる別のモデルの入力として使用し、最終的な予測を行うことで、モデルの性能を向上させます。" },
+        { "text": "モデルの過学習を減らすこと", "isCorrect": false, "rationale": "スタッキングは、過学習する可能性があります。" },
+        { "text": "モデルのトレーニング時間を短縮すること", "isCorrect": false, "rationale": "スタッキングは、トレーニング時間を延長します。" },
+        { "text": "モデルのサイズを減らすこと", "isCorrect": false, "rationale": "スタッキングは、モデルのサイズを減らすものではありません。" }
+      ]
+    },
+    {
+      "question": "モデルのハイパーパラメータチューニングのプロセスで、グリッドサーチを使用する際の主な欠点は何ですか？",
+      "hint": "これは、計算リソースの消費量と関係があります。",
+      "options": [
+        { "text": "探索空間が広すぎる場合、計算コストが非常に高くなること", "isCorrect": true, "rationale": "グリッドサーチは、すべてのパラメータの組み合わせを試すため、探索空間が広すぎると計算コストが非常に高くなります。" },
+        { "text": "局所最適解に陥る可能性が高いこと", "isCorrect": false, "rationale": "グリッドサーチは、局所最適解に陥る可能性は低いですが、効率的ではありません。" },
+        { "text": "手動でパラメータを設定する必要があること", "isCorrect": false, "rationale": "グリッドサーチは、パラメータの値を自動的に試行します。" },
+        { "text": "モデルの汎化能力を向上させることができないこと", "isCorrect": false, "rationale": "グリッドサーチは、モデルの汎化能力を向上させるための手法です。" }
+      ]
+    },
+    {
+      "question": "モデルのハイパーパラメータチューニングのプロセスで、ランダムサーチを使用する際の主な利点は何ですか？",
+      "hint": "これは、グリッドサーチと比較して、効率が良いことです。",
+      "options": [
+        { "text": "探索空間が広い場合でも、効率的に最適な組み合わせを見つけることができること", "isCorrect": true, "rationale": "ランダムサーチは、グリッドサーチよりも効率的に最適な組み合わせを見つけることができます。" },
+        { "text": "すべてのパラメータの組み合わせを試すことができること", "isCorrect": false, "rationale": "これはグリッドサーチの利点です。" },
+        { "text": "手動でパラメータを設定する必要がないこと", "isCorrect": false, "rationale": "ランダムサーチは、パラメータの値を自動的に試行します。" },
+        { "text": "モデルの過学習を防ぐことができること", "isCorrect": false, "rationale": "ランダムサーチは、過学習を防ぐための手法ではありません。" }
+      ]
+    },
+    {
+      "question": "モデルの性能を評価する際、適合率（Precision）とは何を測定しますか？",
+      "hint": "これは、モデルが陽性と予測したサンプルの中で、実際に陽性であった割合を測定するものです。",
+      "options": [
+        { "text": "真陽性の数 / (真陽性の数 + 偽陽性の数)", "isCorrect": true, "rationale": "適合率は、モデルが正と予測したサンプルの中で、実際に正であった割合を測定します。" },
+        { "text": "真陽性の数 / (真陽性の数 + 偽陰性の数)", "isCorrect": false, "rationale": "これは再現率（Recall）です。" },
+        { "text": "(真陽性の数 + 真陰性の数) / 全体の数", "isCorrect": false, "rationale": "これは精度（Accuracy）です。" },
+        { "text": "真陽性の数 + 偽陽性の数", "isCorrect": false, "rationale": "これは適合率ではありません。" }
+      ]
+    },
+    {
+      "question": "モデルの性能を評価する際、再現率（Recall）とは何を測定しますか？",
+      "hint": "これは、すべての陽性サンプルの中で、モデルが正しく予測した割合を測定するものです。",
+      "options": [
+        { "text": "真陽性の数 / (真陽性の数 + 偽陽性の数)", "isCorrect": false, "rationale": "これは適合率（Precision）です。" },
+        { "text": "真陽性の数 / (真陽性の数 + 偽陰性の数)", "isCorrect": true, "rationale": "再現率は、すべての正のサンプルの中で、モデルが正しく予測した割合を測定します。" },
+        { "text": "(真陽性の数 + 真陰性の数) / 全体の数", "isCorrect": false, "rationale": "これは精度（Accuracy）です。" },
+        { "text": "真陽性の数 + 偽陰性の数", "isCorrect": false, "rationale": "これは再現率ではありません。" }
+      ]
+    },
+    {
+      "question": "F1スコアの目的は何ですか？",
+      "hint": "これは、適合率と再現率のバランスを評価するためのものです。",
+      "options": [
+        { "text": "モデルのトレーニング時間を評価すること", "isCorrect": false, "rationale": "F1スコアは、モデルの性能を評価するためのメトリックです。" },
+        { "text": "適合率と再現率の間のトレードオフをバランスさせること", "isCorrect": true, "rationale": "F1スコアは、適合率と再現率の調和平均であり、両方のメトリックを考慮してモデルの性能を評価します。" },
+        { "text": "モデルの過学習を検出すること", "isCorrect": false, "rationale": "F1スコアは、過学習を直接検出するものではありません。" },
+        { "text": "モデルの重みを初期化すること", "isCorrect": false, "rationale": "これは初期化の役割です。" }
+      ]
+    },
+    {
+      "question": "モデルの性能を評価する際、混同行列（Confusion Matrix）は何を示しますか？",
+      "hint": "これは、モデルの予測と実際のクラスの関係を示すものです。",
+      "options": [
+        { "text": "モデルのトレーニング時間", "isCorrect": false, "rationale": "混同行列は、トレーニング時間とは関係ありません。" },
+        { "text": "モデルの重みの分布", "isCorrect": false, "rationale": "混同行列は、重みの分布とは関係ありません。" },
+        { "text": "モデルの予測と実際のクラスの関係", "isCorrect": true, "rationale": "混同行列は、真陽性、偽陽性、偽陰性、真陰性の数を表形式で示し、モデルの性能を詳細に分析するのに役立ちます。" },
+        { "text": "モデルの汎化能力の全体的な尺度", "isCorrect": false, "rationale": "混同行列は、モデルの性能を詳細に分析するのに役立ちますが、全体的な尺度ではありません。" }
+      ]
+    },
+    {
+      "question": "トレーニングデータが少ない場合、モデルの性能を向上させるための最も効果的な手法はどれですか？",
+      "hint": "これは、既存のデータをより多く活用するものです。",
+      "options": [
+        { "text": "モデルのサイズを大きくする", "isCorrect": false, "rationale": "モデルのサイズを大きくすると、過学習する可能性が高くなります。" },
+        { "text": "学習率を下げる", "isCorrect": false, "rationale": "学習率を下げることは、トレーニングを遅くする可能性があります。" },
+        { "text": "データ増強（Data Augmentation）", "isCorrect": true, "rationale": "データ増強は、既存のデータを変換して、トレーニングデータのサイズと多様性を増やし、モデルの汎化能力を向上させます。" },
+        { "text": "早期停止（Early Stopping）", "isCorrect": false, "rationale": "早期停止は、過学習を防ぐための手法です。" }
+      ]
+    },
+    {
+      "question": "モデルの性能がテストデータで低下する原因として最も可能性が高いのはどれですか？",
       "hint": "これは、モデルがトレーニングデータに特化しすぎている状態です。",
       "options": [
-        { "text": "過学習（Overfitting）", "isCorrect": true, "rationale": "トレーニング損失が非常に低く、検証損失が高い場合、モデルがトレーニングデータに過学習していることを示しています。" },
-        { "text": "過小学習（Underfitting）", "isCorrect": false, "rationale": "過小学習は、トレーニング損失も検証損失も高い場合に発生します。" },
-        { "text": "適切なモデル", "isCorrect": false, "rationale": "適切なモデルは、トレーニング損失と検証損失がともに低いか、互いに近い値になります。" },
-        { "text": "早期停止", "isCorrect": false, "rationale": "早期停止は、過学習を防ぐための手法です。" }
-      ]
-    },
-    {
-      "question": "モデルのトレーニング中に、トレーニング損失が0.5、検証損失が0.6の場合、これは何を示していますか？",
-      "hint": "これは、モデルがトレーニングデータに特化しすぎている状態です。",
-      "options": [
-        { "text": "過学習（Overfitting）", "isCorrect": true, "rationale": "トレーニング損失と検証損失が近い値で、どちらも比較的高い場合、モデルが過学習していることを示しています。" },
-        { "text": "過小学習（Underfitting）", "isCorrect": false, "rationale": "過小学習は、トレーニング損失も検証損失も高い場合に発生します。" },
-        { "text": "適切なモデル", "isCorrect": false, "rationale": "適切なモデルは、トレーニング損失と検証損失がともに低いか、互いに近い値になります。" },
-        { "text": "早期停止", "isCorrect": false, "rationale": "早期停止は、過学習を防ぐための手法です。" }
-      ]
-    },
-    {
-      "question": "モデルのトレーニング中に、トレーニング損失が0.5、検証損失が0.5の場合、これは何を示していますか？",
-      "hint": "これは、モデルがトレーニングデータと検証データの両方で同様に機能している状態です。",
-      "options": [
-        { "text": "過学習（Overfitting）", "isCorrect": false, "rationale": "過学習は、トレーニング損失と検証損失の間に大きな差がある場合に発生します。" },
-        { "text": "過小学習（Underfitting）", "isCorrect": true, "rationale": "トレーニング損失と検証損失がほぼ同じで、どちらも高い値の場合、モデルがタスクを十分に学習できていないことを示しています。" },
-        { "text": "適切なモデル", "isCorrect": false, "rationale": "適切なモデルは、トレーニング損失と検証損失がともに低いか、互いに近い値になります。" },
-        { "text": "早期停止", "isCorrect": false, "rationale": "早期停止は、過学習を防ぐための手法です。" }
-      ]
-    },
-    {
-      "question": "モデルのトレーニング中に、トレーニング損失が0.1、検証損失が0.1の場合、これは何を示していますか？",
-      "hint": "これは、モデルがトレーニングデータと検証データの両方で同様に機能している状態です。",
-      "options": [
-        { "text": "過学習（Overfitting）", "isCorrect": false, "rationale": "過学習は、トレーニング損失と検証損失の間に大きな差がある場合に発生します。" },
-        { "text": "過小学習（Underfitting）", "isCorrect": false, "rationale": "過小学習は、トレーニング損失と検証損失がともに高い場合に発生します。" },
-        { "text": "適切なモデル", "isCorrect": true, "rationale": "トレーニング損失と検証損失がほぼ同じで、どちらも低い値の場合、モデルが適切に学習されていることを示しています。" },
-        { "text": "早期停止", "isCorrect": false, "rationale": "早期停止は、過学習を防ぐための手法です。" }
-      ]
-    },
-    {
-      "question": "モデルのトレーニング中に、学習率を徐々に減少させる手法は何と呼ばれますか？",
-      "hint": "これは、学習率スケジューラの一種です。",
-      "options": [
-        { "text": "早期停止（Early Stopping）", "isCorrect": false, "rationale": "早期停止は、トレーニングを停止するための手法です。" },
-        { "text": "学習率減衰（Learning Rate Decay）", "isCorrect": true, "rationale": "学習率減衰は、トレーニングの進行に応じて学習率を段階的に減少させる手法です。" },
-        { "text": "勾配クリッピング（Gradient Clipping）", "isCorrect": false, "rationale": "勾配クリッピングは、勾配の爆発を防ぐための手法です。" },
-        { "text": "バッチ正規化（Batch Normalization）", "isCorrect": false, "rationale": "バッチ正規化は、学習を安定させるための手法です。" }
-      ]
-    },
-    {
-      "question": "モデルのトレーニング中に、学習率を段階的に減少させる手法は何と呼ばれますか？",
-      "hint": "これは、学習率スケジューラの一種です。",
-      "options": [
-        { "text": "ステップ減衰（Step Decay）", "isCorrect": true, "rationale": "ステップ減衰は、一定のエポック数ごとに学習率を特定の割合で減少させる手法です。" },
-        { "text": "指数減衰（Exponential Decay）", "isCorrect": false, "rationale": "指数減衰は、学習率を指数関数的に減少させる手法です。" },
-        { "text": "コサイン減衰（Cosine Decay）", "isCorrect": false, "rationale": "コサイン減衰は、学習率をコサイン曲線に従って減少させる手法です。" },
-        { "text": "早期停止（Early Stopping）", "isCorrect": false, "rationale": "早期停止は、トレーニングを停止するための手法です。" }
-      ]
-    },
-    {
-      "question": "モデルのトレーニング中に、学習率を指数関数的に減少させる手法は何と呼ばれますか？",
-      "hint": "これは、学習率スケジューラの一種です。",
-      "options": [
-        { "text": "ステップ減衰（Step Decay）", "isCorrect": false, "rationale": "ステップ減衰は、一定のエポック数ごとに学習率を特定の割合で減少させる手法です。" },
-        { "text": "指数減衰（Exponential Decay）", "isCorrect": true, "rationale": "指数減衰は、学習率を指数関数的に減少させる手法です。" },
-        { "text": "コサイン減衰（Cosine Decay）", "isCorrect": false, "rationale": "コサイン減衰は、学習率をコサイン曲線に従って減少させる手法です。" },
-        { "text": "早期停止（Early Stopping）", "isCorrect": false, "rationale": "早期停止は、トレーニングを停止するための手法です。" }
-      ]
-    },
-    {
-      "question": "モデルのトレーニング中に、学習率をコサイン曲線に従って減少させる手法は何と呼ばれますか？",
-      "hint": "これは、学習率スケジューラの一種です。",
-      "options": [
-        { "text": "ステップ減衰（Step Decay）", "isCorrect": false, "rationale": "ステップ減衰は、一定のエポック数ごとに学習率を特定の割合で減少させる手法です。" },
-        { "text": "指数減衰（Exponential Decay）", "isCorrect": false, "rationale": "指数減衰は、学習率を指数関数的に減少させる手法です。" },
-        { "text": "コサイン減衰（Cosine Decay）", "isCorrect": true, "rationale": "コサイン減衰は、学習率をコサイン曲線に従って減少させる手法です。" },
-        { "text": "早期停止（Early Stopping）", "isCorrect": false, "rationale": "早期停止は、トレーニングを停止するための手法です。" }
-      ]
-    },
-    {
-      "question": "モデルのトレーニング中に、勾配が非常に小さくなり、学習がほとんど進まなくなる現象は何と呼ばれますか？",
-      "hint": "これは、深いニューラルネットワークで特に顕著です。",
-      "options": [
-        { "text": "勾配爆発（Exploding Gradient）", "isCorrect": false, "rationale": "勾配爆発は、勾配が非常に大きくなる現象です。" },
-        { "text": "勾配消失（Vanishing Gradient）", "isCorrect": true, "rationale": "勾配消失は、ネットワークが深くなるにつれて勾配が非常に小さくなり、最初の層の学習がほとんど進まなくなる現象です。" },
-        { "text": "過学習（Overfitting）", "isCorrect": false, "rationale": "過学習は、モデルがトレーニングデータに特化しすぎている状態です。" },
-        { "text": "過小学習（Underfitting）", "isCorrect": false, "rationale": "過小学習は、モデルがタスクを学習できていない状態です。" }
-      ]
-    },
-    {
-      "question": "モデルのトレーニング中に、勾配が非常に大きくなり、損失が発散する現象は何と呼ばれますか？",
-      "hint": "これは、勾配クリッピングで解決できます。",
-      "options": [
-        { "text": "勾配爆発（Exploding Gradient）", "isCorrect": true, "rationale": "勾配爆発は、勾配が非常に大きくなり、損失が発散する現象です。" },
-        { "text": "勾配消失（Vanishing Gradient）", "isCorrect": false, "rationale": "勾配消失は、勾配が非常に小さくなる現象です。" },
-        { "text": "過学習（Overfitting）", "isCorrect": false, "rationale": "過学習は、モデルがトレーニングデータに特化しすぎている状態です。" },
-        { "text": "過小学習（Underfitting）", "isCorrect": false, "rationale": "過小学習は、モデルがタスクを学習できていない状態です。" }
-      ]
-    },
-    {
-      "question": "モデルのファインチューニングのプロセスで、学習率を非常に低く設定する理由は何ですか？",
-      "hint": "これは、事前学習済みモデルの知識を維持するためです。",
-      "options": [
-        { "text": "モデルの過学習を防ぐため", "isCorrect": true, "rationale": "学習率を低く設定することで、モデルのパラメータが大幅に変化するのを防ぎ、事前学習済みモデルの知識を維持し、過学習を防ぎます。" },
-        { "text": "モデルのトレーニング時間を短縮するため", "isCorrect": false, "rationale": "学習率が低いと、トレーニング時間が長くなります。" },
-        { "text": "モデルの重みをゼロに初期化するため", "isCorrect": false, "rationale": "これは初期化の役割です。" },
-        { "text": "モデルの汎化能力を向上させるため", "isCorrect": false, "rationale": "学習率を低く設定することは、モデルの汎化能力を向上させるための手法です。" }
+        { "text": "過学習（Overfitting）", "isCorrect": true, "rationale": "過学習は、モデルがトレーニングデータ内のノイズや特定のパターンを過剰に学習した結果、未知のデータに対する汎化能力が失われる現象です。" },
+        { "text": "過小学習（Underfitting）", "isCorrect": false, "rationale": "過小学習は、モデルがトレーニングデータでもうまく機能しないことです。" },
+        { "text": "適切な学習率の使用", "isCorrect": false, "rationale": "適切な学習率は、モデルの性能を向上させます。" },
+        { "text": "早期停止（Early Stopping）", "isCorrect": false, "rationale": "早期停止は、過学習を防ぐための手法です。" }
       ]
     }
 ];
